@@ -1,3 +1,2 @@
 # teknofest_projesi
-a
 
