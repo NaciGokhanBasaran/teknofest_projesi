@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="background_styles.css">
+      <link rel="stylesheet" href="navbar.css">
+      <script src="navbar.js" defer></script>
+      <title>Responsive Navbar</title>
+
+      <link rel="stylesheet" href="static/navbar.css">
+    </head>
+    <body
+    {%block navbar%}
+      <nav class="navbar">
+        <div class="brand-title">Brand Name</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="#">Teknofest projesi</a></li>
+            <li><a href="#">Hakkında</a></li>
+            <li><a href="#">İletişim</a></li>
+          </ul>
+        </div>
+      </nav>
+      <script>
+        const toggleButton = document.getElementsByClassName('toggle-button')[0]
+        const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+        toggleButton.addEventListener('click', () => {
+        navbarLinks.classList.toggle('active')})
+      </script>
+    {%{% endblock %}%}
+    </body>
+</html>
