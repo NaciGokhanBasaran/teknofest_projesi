@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+
+     
+
+   </head>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+   <body>
+  
+
+     
+
+      <table>
+         <thead>
+            <tr>
+               <th>Metin</th>
+               <th>Duygu</th>
+               <th>
+            </tr>
+         </thead>
+         
+         <tbody>
+            {% for data in db %}
+           
+           
+             
+               <tr>
+                  <td>{{data.isim}}</td>
+                  <td>{{ data.metin }}</td>
+                  <td>{{ data.duygu }}</td>
+                  <td>{{ data.eksi_sayfa_sayisi }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+      
+   </body>
+</html>

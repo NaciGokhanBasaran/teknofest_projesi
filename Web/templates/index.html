@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+   
+    <title>Sentify</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@900&display=swap');
+
+            * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+    
+}
+
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #fff;
+    
+}
+
+.logo {
+    color: rgb(70, 130, 221);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    font-family: "Poppins", sans-serif;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.nav-links li {
+    list-style: none;
+    padding:10px;
+}
+
+.nav-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: normal;
+}
+.nav-links a:hover{
+  color:#106eea;
+}
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #767676;;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    
+    
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        height: 88vh;
+        top:5vh;
+        bottom:12vh;
+        
+        background-color: #fcfcfc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        
+
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    
+    
+    .nav-links li a:hover{
+        color: rgb(70, 130, 221);
+
+    }
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+.nav-active {
+        transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+   
+
+
+.hero {
+    align-self: center;
+    display: flex;
+    
+    background-color:#ffffff;
+    height: 60vh;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    flex-direction: row;
+
+}
+      
+.hero .text {
+    
+    max-width:700px;
+    font-size: 1.4rem;
+    text-align: center;
+    color: rgb(1, 1, 1);
+    
+}
+canvas{
+    background-color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        height: 90vh;
+    }
+}
+
+
+
+.serif{
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 1rem;
+}
+.hizmetler{
+    width:100%;
+    height:100%;
+    background-color:#F6F9FE;
+}
+.baslik{
+    text-align: center;
+    color: rgb(70, 130, 221);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    font-family: "Poppins", sans-serif;
+}
+.main{
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+
+.card {
+  background-color:#F6F9FE ;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card_content {
+  padding: 1rem;
+  background: linear-gradient(to bottom left , #1a325d , #6899f5 );
+}
+
+.card_title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+.card_text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;    
+  font-weight: 400;
+}
+.skills{
+  width:80%;
+  margin :0 auto;
+}
+.skills .progress {
+  height: 60px;
+  display: block;
+  background: none;
+  border-radius: 0;
+}
+
+.skills .progress .skill {
+  padding: 0;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  display: block;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #222222;
+}
+
+.skills .progress .skill .val {
+  float: right;
+  font-style: normal;
+}
+
+.skills .progress-bar-wrap {
+  background: #e2eefd;
+  height: 10px;
+}
+
+.skills .progress-bar {
+  width: 100%;
+  height: 10px;
+  transition: 0.9s;
+  background-color: #106eea;
+}
+.son{
+  height:15vh;
+  background-color: #393939;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color:grey;
+
+  padding-top: 75px;
+}
+.son p{
+  opacity: 0.8;
+}
+a{
+    color:#fff;
+    text-decoration:none;
+}
+        </style>
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+        </script>
+    </head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h4>Sentify</h4>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Anasayfa</a></li>
+            <li><a href="#">Hakkında</a></li>
+            <li><a href="#">Hizmetler</a></li>
+            <li><a href="#">Kullanılanlar</a></li>
+            <li><a href="">iletişim</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav><br><br>
+    <div class="hero">
+        <div class="text">
+            <div class="baslik">
+                <h4>Sentify</h4>
+            </div><br>
+         <h1>"hakkınızda ne dendi" </h1><br>
+         <p>Sentify projesi itibar analizi yapmak ve internetten kolayca veri çekmenizi sağlamak için Bulak takımı tarafından geliştirilmiştir.
+         </p>
+     </div>
+     <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+
+     
+    </div>
+    <section class="hizmetler">
+
+   
+    <div class="main">
+        <br>
+        <div class="baslik">
+            <h4>Hizmetler</h4>
+        </div><br><br>
+        <ul class="cards">
+         
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_image"><img src="https://picsum.photos/500/300/?image=5"></div>
+              <div class="card_content">
+                <h2 class="card_title">Veri çekme</h2>
+                <p class="card_text">Ekşi sözlük hepsi burada,<br>şikayet var ,twitter  platformlardan istediğiniz kadar veri çekmenizi sağlar </p>
+                <button href="/veri" class="btn card_btn"><a href="/veri">Veri çek</a></button>
+              </div>
+            </div>
+          </li>
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_image"><img src="https://picsum.photos/500/300/?image=11"></div>
+              <div class="card_content">
+                <h2 class="card_title">Duygu analizi</h2>
+                <p class="card_text">Çektiğiniz veriler üzerinde duygu analizi uygular ver her veriyi "olumlu" "olumsuz" veya "nötr" olarak sınıflandırır</p>
+                <button class="btn card_btn"><a href="/duygu_analizi">Analiz et</a></button>
+              </div>
+            </div>
+          </li>
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_image"><img src="https://picsum.photos/500/300/?image=14"></div>
+              <div class="card_content">
+                <h2 class="card_title">Canlı itibar analizi</h2>
+                <p class="card_text">Bankacılık,Turizim,Gıda ... sektörlerinde olan şirketlerin verisini canlı olarak çekip birbirleriyle karşılaştırır.</p>
+                <button class="btn card_btn">Çok yakında</button>
+              </div>
+            </div>
+          </li>
+          
+          
+        </ul>
+      </div>
+      <br><br><br><br>
+
+    </section><br>
+
+    <section id="skills" class="skills">
+      <div class="baslik"><span style="color:black;">projede </span>kullanılanlar</div>
+      <br><div class="container" data-aos="fade-up">
+
+        <div class="row skills-content">
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill">Python <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">CSS <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">JavaScript <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill">html <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">flask <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><br>
+    <div class="son">
+      <p>By:Naci Gökhan Başaran</p>
+    </div>
+    <script>
+        var xyValues = [
+  {x:50, y:7},
+  {x:60, y:8},
+  {x:70, y:8},
+  {x:80, y:9},
+  {x:90, y:9},
+  {x:100, y:9},
+  {x:110, y:10},
+  {x:120, y:11},
+  {x:130, y:14},
+  {x:140, y:14},
+  {x:150, y:15}
+];
+
+new Chart("myChart", {
+  type: "scatter",
+  data: {
+    datasets: [{
+      pointRadius: 4,
+      pointBackgroundColor: "rgb(70, 130, 221)",
+      data: xyValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      xAxes: [{ticks: {min: 40, max:160}}],
+      yAxes: [{ticks: {min: 6, max:16}}],
+    }
+  }
+});
+        function navSlide() {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+    const navLinks = document.querySelectorAll(".nav-links li");
+    
+    burger.addEventListener("click", () => {
+        //Toggle Nav
+        nav.classList.toggle("nav-active");
+        
+        //Animate Links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = ""
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+            }
+        });
+        //Burger Animation
+        burger.classList.toggle("toggle");
+    });
+    
+  }
+
+navSlide();
+    </script>
+</body>
+</html><!--  
+  Sentify veri çekmyi ve itibar analizi yapmayı kolaylaştırmak amacıyla geliştirilen bir projedir.Projede request beautifulSoup flask sklearn pandas vb python kütüphaneleri kullanılmıştır.Ve html ,css ,flask ,javascript dilleri kullanılarak web uygulaması haline getirilmiştir
+-->
